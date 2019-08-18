@@ -1,5 +1,10 @@
 ﻿@model Enquiry
-
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    var email = ViewBag.Email;
+}
 <form asp-action="Index" method="post" class="form-horizontal" role="form">
 
     <div class="form-group">
@@ -13,7 +18,8 @@
     <div class="form-group">
         <label asp-for="Email" class="col-md-2 control-label"></label>
         <div class="col-md-5">
-            <input asp-for="Email" class="form-control" />
+            @*Get current user email address then disable the input so it cant be changes*@
+            <input asp-for="Email" class="form-control" value="@UserManager.GetUserName(User)" readonly />
             <span asp-validation-for="Email" class="text-danger"></span>
 
         </div>
@@ -27,6 +33,12 @@
 
         </div>
     </div>
+
+    <input asp-for="HouseID"  value="@ViewContext.RouteData.Values["id"]" type="hidden" />
+
+
+
+
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-5">

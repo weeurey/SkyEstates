@@ -2,7 +2,7 @@
 
 namespace SkyEstates.Migrations
 {
-    public partial class initialMigration2 : Migration
+    public partial class FinalMigartion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

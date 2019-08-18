@@ -16,6 +16,10 @@
                     asp-route-id="@house.Id">@house.Name</a>
                 </h3>
                 <p>@house.ShortDescription</p>
+                @if (house.IsHouseOfTheWeek)
+                {
+                    <h4 style="color:red;"> Property of the week! </h4>
+                }
             </div>
         </div>
     </div>

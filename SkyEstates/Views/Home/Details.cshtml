@@ -11,5 +11,9 @@
             </h3>
             <h4>@Model.ShortDescription</h4>
             <p>@Model.LongDescription</p>
+
+            <h4><a asp-controller="Enquiry" asp-action="Index"
+               asp-route-id="@Model.Id">Submit an Enquiry for this Property</a></h4>
+
         </div>
 </div>

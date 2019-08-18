@@ -15,7 +15,10 @@
              <div class="navbar-collapse collapse">
                  <ul class="nav navbar-nav">
                      <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">SkyEstates</a></li>
-                     <li><a asp-controller="Enquiry" asp-action="Index" class="navbar-brand">Enquiry</a></li>
+                     <li><a asp-controller="Home" asp-action="MyEnquiry" class="navbar-link">My Enquiry</a></li>
+
+                     <partial name="_LoginPartial" />
+
                  </ul>
              </div>
          </div>
@@ -29,5 +32,6 @@
             @RenderBody()
         </div>
     </div>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

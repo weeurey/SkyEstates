@@ -1,0 +1,33 @@
+﻿@model EnquiryViewModel
+@*model House*@
+
+<h2>Your Enquiries</h2>
+@foreach (var hos in Model.Houses)
+{
+    foreach (var enq in Model.Enquiries)
+    {
+        if (hos.Id == enq.HouseID)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+
+                <div class="thumbnail">
+                    <h2>@hos.Name</h2>
+
+                    <img style="width: 320px; height: 200px" src="@hos.ImageThumbnailUrl" alt="">
+                    <div class="caption">
+                        <h3 class="pull-right">@hos.Price.ToString("c")</h3>
+                        <p>@hos.ShortDescription</p>
+
+                    </div>
+                    <h3>Your Enquiry</h3>
+                    <p>@enq.Message</p>
+                </div>
+            </div>
+
+        }
+
+
+    }
+
+
+}

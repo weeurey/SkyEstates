@@ -10,8 +10,8 @@ using SkyEstates.Models;
 namespace SkyEstates.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190818185556_identity edit2")]
-    partial class identityedit2
+    [Migration("20190818221856_Remove Constraints from email as now passed from usermanager")]
+    partial class RemoveConstraintsfromemailasnowpassedfromusermanager
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,9 +138,11 @@ namespace SkyEstates.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -171,9 +173,11 @@ namespace SkyEstates.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value");
 
@@ -188,9 +192,7 @@ namespace SkyEstates.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<string>("Email");
 
                     b.Property<string>("Message")
                         .IsRequired()
@@ -199,6 +201,8 @@ namespace SkyEstates.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(30);
+
+                    b.Property<string>("UserId");
 
                     b.HasKey("EnquiryId");
 

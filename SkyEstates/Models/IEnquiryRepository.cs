@@ -7,7 +7,9 @@ namespace SkyEstates.Models
 {
     public interface IEnquiryRepository
     {
+        IEnumerable<Enquiry> GetAllEnquiry();
         void AddEnquiry(Enquiry enquiry);
+        IEnumerable<Enquiry> GetEnquiryByUserID(string uID);
 
     }
 }

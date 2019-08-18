@@ -2,22 +2,22 @@
 
 namespace SkyEstates.Migrations
 {
-    public partial class housemodelchange : Migration
+    public partial class AddUderIDtoEnqmodel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<bool>(
-                name: "IsUnderOffer",
-                table: "Houses",
+            migrationBuilder.AddColumn<int>(
+                name: "UserId",
+                table: "Enquiries",
                 nullable: false,
-                defaultValue: false);
+                defaultValue: 0);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "IsUnderOffer",
-                table: "Houses");
+                name: "UserId",
+                table: "Enquiries");
         }
     }
 }

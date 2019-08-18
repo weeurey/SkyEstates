@@ -17,11 +17,24 @@ namespace SkyEstates.Models
         }
 
 
+        public IEnumerable<Enquiry> GetAllEnquiry()
+        {
+            return _appDbContext.Enquiries;
+        }
+
+
 
         public void AddEnquiry(Enquiry enquiry)
         {
             _appDbContext.Enquiries.Add(enquiry);
             _appDbContext.SaveChanges();
+        }
+
+        public IEnumerable<Enquiry> GetEnquiryByUserID(string uID)
+
+        {
+            
+            return _appDbContext.Enquiries.Where(s => s.UserId == uID);
         }
     }
 }

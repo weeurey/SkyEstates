@@ -10,8 +10,8 @@ using SkyEstates.Models;
 namespace SkyEstates.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190818185423_identity edit")]
-    partial class identityedit
+    [Migration("20190818210023_AddUderID to Enq model 2.0")]
+    partial class AddUderIDtoEnqmodel20
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,9 +138,11 @@ namespace SkyEstates.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -171,9 +173,11 @@ namespace SkyEstates.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value");
 
@@ -188,11 +192,11 @@ namespace SkyEstates.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("ContactMe");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<int>("HouseId");
 
                     b.Property<string>("Message")
                         .IsRequired()
@@ -201,6 +205,9 @@ namespace SkyEstates.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(30);
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
 
                     b.HasKey("EnquiryId");
 
