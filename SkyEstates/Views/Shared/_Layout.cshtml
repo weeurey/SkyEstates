@@ -10,6 +10,15 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+             <div class="navbar-collapse collapse">
+                 <ul class="nav navbar-nav"></ul>
+                 <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">SkyEstates</a></li>
+             </div>
+         </div>
+    </nav>
+
     <div class="container body-content">
         <div class="row">
             @RenderBody()

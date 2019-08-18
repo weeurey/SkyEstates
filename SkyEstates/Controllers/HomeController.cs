@@ -25,7 +25,7 @@ namespace SkyEstates.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var houses = _houseRepository.GetAllHouses().OrderBy(p => p.Name);
+            var houses = _houseRepository.GetAllHouses().OrderBy(p => p.Id);
 
 
             var homeViewModel = new HomeViewModel()
@@ -38,6 +38,17 @@ namespace SkyEstates.Controllers
 
 
             return View(homeViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var house = _houseRepository.GetHouseByID(id);
+            if (house == null)
+            {
+                return NotFound();
+            }
+
+            return View(house);
         }
     }
 }
