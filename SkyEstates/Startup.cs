@@ -30,6 +30,8 @@ namespace SkyEstates
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHouseRepository, HouseRepository>();
+            services.AddTransient<IEnquiryRepository, EnquiryRepository>();
+
             services.AddMvc();
         }
 
@@ -39,6 +41,7 @@ namespace SkyEstates
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
