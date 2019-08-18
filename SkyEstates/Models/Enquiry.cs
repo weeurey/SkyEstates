@@ -27,6 +27,6 @@ namespace SkyEstates.Models
         [StringLength(5000, ErrorMessage = "Your message is required")]
         public string Message { get; set; }
 
-        public bool ContactMe { get; set; }
+        //public bool ContactMe { get; set; }
     }
 }
