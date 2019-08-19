@@ -16,7 +16,6 @@ namespace SkyEstates.Models
         public string ImageUrl { get; set; }
         public string ImageThumbnailUrl { get; set; }
         public bool IsHouseOfTheWeek { get; set; }
-        public bool IsUnderOffer { get; set; }
         
 
     }
