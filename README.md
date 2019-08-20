@@ -3,12 +3,14 @@ An assesment completed for ClearView Logic
 
 # The App
 
-This web application was made using ASP.Net Core 2.2 MVC. The Azure hosted web app can be found in the following link ;- https://skyestates20190819012025.azurewebsites.net/
+This web application was made using ASP.Net Core 2.2 MVC with a little bit of touque-in-cheek humour with the properties. <br>
+The Azure hosted web app can be found in the following link ;- https://skyestates20190819012025.azurewebsites.net/
 # Admin Account
 
-To log in as an admin simply use the following credentials<br>
+To log in as an admin simply use the following credentials on the web app<br>
 Username: admin@admin.com<br>
 Password: Password1@
+
 
 To see all enquiries navagate to the following hidden page ".../home/AllEnquiry"
 
