@@ -1,0 +1,42 @@
+﻿@model EnquiryViewModel
+@*model House*@
+
+<h1>@ViewBag.Error</h1>
+@if(ViewBag.Error ==""){
+<h2>All Enquiries</h2>
+@foreach (var hos in Model.Houses)
+{
+
+            <div class="">
+
+                <div class="thumbnail">
+                    <h2>@hos.Name</h2>
+
+                    <img style="width: 320px; height: 200px" src="@hos.ImageThumbnailUrl" alt="" class="text-center">
+                    <div class="caption">
+
+                        <h3 class="pull-right">@hos.Price.ToString("c")</h3>
+                        <p class="text-center">@hos.ShortDescription</p>
+                        <br><br>
+
+                    </div>
+
+                    @foreach (var enq in Model.Enquiries)
+                    {
+                    if (hos.Id == enq.HouseID)
+                    {
+                    <div class="alert alert-success">
+                        <h4>Customer Enquiry</h4>
+                        <p><strong> Customer Email Address: </strong>@enq.Email</p><br>
+                        <p><strong>Customer Enquiry:</strong> @enq.Message </p>
+                    </div>
+                        }
+                        }
+                    
+                </div>
+            </div>
+
+        }
+}
+
+

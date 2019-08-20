@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SkyEstates.Models;
 using SkyEstates.ViewModels;
@@ -74,6 +75,36 @@ namespace SkyEstates.Controllers
             }
 
             return View(house);
+        }
+
+        [Authorize]
+        public IActionResult AllEnquiry(int id)
+        {
+
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+
+            if (userId == "5522117f-b819-45aa-85a3-d316af1717b5" || userId == "a03605d5-8298-4ef6-bdb2-b86988459297")
+            {
+                var houses = _houseRepository.GetAllHouses().OrderBy(p => p.Id);
+                            var enquirys = _enquiryRepository.GetAllEnquiry();
+
+                            var enquiryViewModel = new EnquiryViewModel()
+                            {
+                                Title = "All enquiries are listed below",
+                                Houses = houses.ToList(),
+                                Enquiries = enquirys.ToList()
+
+                            };
+
+                ViewBag.Error = "";
+                            return View(enquiryViewModel);
+
+            }
+            ViewBag.Error = "You are not an admin.";
+
+            return View();
+            
         }
     }
 }
