@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEstates.Models
+    //model for the enquiry object, validation is here too
 {
     public class Enquiry
     {
@@ -32,6 +33,5 @@ namespace SkyEstates.Models
 
 
 
-        //public bool ContactMe { get; set; }
     }
 }

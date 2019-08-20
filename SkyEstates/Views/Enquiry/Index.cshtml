@@ -1,4 +1,5 @@
-﻿@model Enquiry
+﻿
+@model Enquiry
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
@@ -6,12 +7,15 @@
     var email = ViewBag.Email;
 }
 <br/> <br/>
+
+@* Form using tag helpers to send the data and log it in the model*@
 <form asp-action="Index" method="post" class="form-horizontal" role="form">
 
     <div class="form-group">
         <label asp-for="Name" class="col-md-2 control-label"></label>
         <div class="col-md-5">
             <input asp-for="Name" class="form-control" />
+            
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
     </div>

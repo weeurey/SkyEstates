@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEstates.Models
+    //basic needed class to set up the DB tables are defined here
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {

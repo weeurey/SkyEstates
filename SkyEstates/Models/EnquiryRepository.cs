@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEstates.Models
+    //methods for getting the data
 {
     public class EnquiryRepository : IEnquiryRepository
     {
@@ -33,7 +34,7 @@ namespace SkyEstates.Models
         public IEnumerable<Enquiry> GetEnquiryByUserID(string uID)
 
         {
-            
+            //get only enquires matching with the passed in uID
             return _appDbContext.Enquiries.Where(s => s.UserId == uID);
         }
     }

@@ -11,6 +11,7 @@ using SkyEstates.Models;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SkyEstates.Controllers
+    //Must be Logged in
 {        [Authorize]
 
 
@@ -30,15 +31,16 @@ namespace SkyEstates.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.Email = "liamure@yahoo.co.uk"; //this.User.FindFirstValue(ClaimTypes.Email);
             return View();
         }
 
+        //Get the data from post
         [HttpPost]
         public IActionResult Index(Enquiry enquiry)
         {
             if (ModelState.IsValid)
             {
+                //Get ID of logged in user and set it
              var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
                 enquiry.UserId = userId;
 
@@ -53,6 +55,7 @@ namespace SkyEstates.Controllers
 
         public IActionResult EnquiryComplete()
         {
+            //Returns a thank you message
             return View();
         }
     }

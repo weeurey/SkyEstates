@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEstates.Models
+    //Model for the house, no user input for this thus no validation
 {
     public class House
     {

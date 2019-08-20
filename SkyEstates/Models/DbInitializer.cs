@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEstates.Models
+    //class that sets up some basic content if none is found
 {
     public static class DbInitializer
     {

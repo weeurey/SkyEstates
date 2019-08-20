@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SkyEstates.Models
+    //methods for getting the class data
 {
     public class HouseRepository : IHouseRepository
     {
@@ -24,6 +25,7 @@ namespace SkyEstates.Models
 
         public House GetHouseByID(int HouseId)
         {
+            //only return houses with matching ID
             return _appDbContext.Houses.FirstOrDefault(p => p.Id == HouseId);
         }
     }
