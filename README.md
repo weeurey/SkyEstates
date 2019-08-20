@@ -1,5 +1,5 @@
 # SkyEstate Project
-An assesment completed for ClearView Logic
+An assesment completed for ClearSky Logic
 
 # The App
 
