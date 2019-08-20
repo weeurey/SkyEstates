@@ -24,7 +24,8 @@ This will allow you to view all enquiries currently in the system.
 7. Imput validation should be carried out on the user input
 
 # Extra Files
-In the 'Extra Files' directory I have uploaded a SQL file that should generate the required tables for the system, if needed.
+In the 'Extra Files' directory I have uploaded a SQL file that should generate the required tables for the system, if needed.<br>
+I have also added in a flowchart diagram showing both the normal user and an admin user
 
 # Issues
 The current main issue is that all the images are loading in from the net slightly slowing down the application.
