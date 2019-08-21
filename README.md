@@ -5,6 +5,8 @@ An assesment completed for ClearSky Logic
 
 This web application was made using ASP.Net Core 2.2 MVC with a little bit of touque-in-cheek humour with the properties. <br>
 The Azure hosted web app can be found in the following link ;- https://skyestates20190819012025.azurewebsites.net/
+
+Application allows users to view available properties for rent and also enquire about them if they log in. An admin account is available, details below, to view all enquiries made using the system.
 # Admin Account
 
 To log in as an admin simply use the following credentials on the web app<br>
